@@ -1,0 +1,43 @@
+---
+title: 'DayCal'
+icon: 'chevron-right'
+---
+
+import Link from 'next/link';
+
+
+The `DayCal` component provides a daily calendar view that displays events in two categories: all-day events and timed events. It offers day navigation (previous day, next day, and today), and event details are shown in a dialog when selected.
+
+## Props
+
+### `events: Event[]`
+
+- **Type:** `Event[]`
+- **Description:** An array of <Link href="/types/Event">Events</Link>.
+- **Event Object Requirements:**
+  - View the <Link href="/types/Event">Event</Link> page for more details.
+
+### `initialDate?: Date`
+
+- **Type:** `Date` (optional)
+- **Description:** The starting date for the calendar view. Defaults to today's date if not provided.
+
+## Usage Example
+
+Below is an example of how to use the `DayCal` component.
+
+```jsx
+'use client'
+
+import React from 'react';
+import { DayCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => (
+  <>
+    <DayCal
+      events={events ?? []} />
+  </>
+);
+
+export default App;

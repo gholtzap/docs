@@ -1,0 +1,35 @@
+---
+title: 'YearCal'
+icon: 'chevron-right'
+---
+
+import Link from 'next/link';
+
+The `YearCal` component provides a **yearly calendar view** that offers an overview of the entire year divided into monthly segments. With this component, users can click on a specific month to view its details in a month view or select a day to access a day view (currently under construction). The component internally manages view transitions and leverages `date-fns` for robust date manipulation.
+
+## Props
+
+### `initialDate?: Date`
+
+- **Type:** `Date` (optional)
+- **Description:** The starting date for the calendar. If not provided, it defaults to the current date.
+
+## Usage Example
+
+Below is an example of how to use the `YearCal` component:
+
+```jsx
+'use client'
+
+import React from 'react';
+import { YearCal } from 'solisa-calendar';
+
+const App = () => {
+  return (
+    <>
+      <YearCal />
+    </>
+  );
+};
+
+export default App;

@@ -3,100 +3,69 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2b7fff",
+    "light": "#2b7fff",
+    "dark": "#2b7fff"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Docs",
         "groups": [
           {
             "group": "Get Started",
             "pages": [
               "introduction",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Components",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
+              "components/DayCal",
+              "components/WeekCal",
+              "components/MonthCal",
+              "components/YearCal",
+              "components/FullCal"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Types",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "types/Event"
             ]
           }
         ]
       }
+
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Registry",
+          "href": "https://www.npmjs.com/package/solisa-calendar",
+          "icon": "npm"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/solisa.svg",
+    "dark": "/logo/solisa.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Solisa.AI",
+      "href": "https://www.solisa.ai/"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/SolisaAI",
+      "github": "https://github.com/Solisa-AI",
+      "linkedin": "https://linkedin.com/company/solisaai"
     }
   }
 }

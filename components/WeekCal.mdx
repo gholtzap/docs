@@ -1,0 +1,38 @@
+---
+title: 'WeekCal'
+icon: 'chevron-right'
+---
+
+import Link from 'next/link';
+
+The `WeekCal` component provides a **weekly calendar view** that organizes events across a full week. It displays events in two categories: all-day events and timed events. Users can navigate between weeks using the previous, next, and today controls. Additionally, selecting an event opens a dialog with detailed event information.
+
+## Props
+
+### `events: Event[]`
+
+- **Type:** `Event[]`
+- **Description:** An array of <Link href="/types/Event">Events</Link>.
+- **Event Object Requirements:**
+  - Refer to the <Link href="/types/Event">Event</Link> page for more details on the event object structure.
+
+## Usage Example
+
+Below is an example of how to use the `WeekCal` component:
+
+```jsx
+'use client'
+
+import React from 'react';
+import { WeekCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => {
+  return (
+    <>
+      <WeekCal events={events ?? []} />
+    </>
+  );
+};
+
+export default App;

@@ -1,0 +1,46 @@
+---
+title: 'FullCal'
+icon: 'chevron-right'
+---
+
+import Link from 'next/link';
+
+The `FullCal` component is an integrated, full-featured calendar view that lets users switch between multiple calendar layouts. It internally aggregates day, week, month, and year views (via the `DayCal`, `WeekCal`, `MonthCal`, and `YearCal` components) and provides a convenient dropdown menu for switching between them. This makes it easy to present a unified calendar experience where the user can dynamically select the desired view.
+
+## Props
+
+### `availableViews?: CalendarView[]`
+
+- **Type:** `CalendarView[]`
+- **Default:** `['day', 'week', 'month', 'year']`
+- **Description:** Optionally restricts which calendar views are available to the user. For example, you can limit the choices to specific views like `['week', 'month']`.
+
+### `events?: any[]`
+
+- **Type:** `any[]`
+- **Description:** An optional array of events to be passed to the calendar sub-components (such as `DayCal`, `WeekCal`, and `MonthCal`). Ensure your events conform to the expected structure described on the <Link href="/types/Event">Event</Link> page.
+
+### `defaultView?: CalendarView`
+
+- **Type:** `CalendarView`
+- **Default:** `'day'`
+- **Description:** Sets the initial calendar view when the component is rendered. The default is set to `'day'` unless overridden.
+
+## Usage Example
+
+Below is an example of how to use the `FullCal` component:
+
+```jsx
+'use client'
+
+import React from 'react';
+import { FullCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => {
+  return (
+    <FullCal availableViews={['week', 'month']} events={events} defaultView="week" />
+  );
+};
+
+export default App;

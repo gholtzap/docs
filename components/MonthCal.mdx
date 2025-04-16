@@ -1,0 +1,37 @@
+---
+title: 'MonthCal'
+icon: 'chevron-right'
+---
+
+import Link from 'next/link';
+
+The `MonthCal` component provides a **monthly calendar view** that displays events organized by day. It renders a full month grid (including overflow days from adjacent months) and supports both larger screen and mobile layouts. Users can click on a day to view its events, which are displayed in a popover for days with multiple events.
+
+## Props
+
+### `events: CalendarEvent[]`
+
+- **Type:** `CalendarEvent[]`
+- **Description:** An array of events that follow the <Link href="/types/Event">Event</Link> type. The component uses each event's start date to place it correctly within the monthly grid.
+- **Note:** Ensure that each event's date is provided in a format compatible with `date-fns` (e.g., ISO string) for proper parsing.
+
+## Usage Example
+
+Below is an example of how to use the `MonthCal` component:
+
+```jsx
+'use client'
+
+import React from 'react';
+import { MonthCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => {
+  return (
+    <>
+      <MonthCal events={events ?? []} />
+    </>
+  );
+};
+
+export default App;
