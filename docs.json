@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Solisa Calendar",
   "colors": {
     "primary": "#2b7fff",
     "light": "#2b7fff",
