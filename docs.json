@@ -12,7 +12,14 @@
     "tabs": [
       {
         "tab": "Docs",
+        
         "groups": [
+          {
+            "group": "Release Notes",
+            "pages": [
+              "releasenotes"
+            ]
+          },
           {
             "group": "Get Started",
             "pages": [
@@ -40,6 +47,7 @@
       }
 
     ],
+    
     "global": {
       "anchors": [
         {
@@ -52,7 +60,7 @@
   },
   "logo": {
     "light": "/logo/solisa.svg",
-    "dark": "/logo/solisa.svg"
+    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "primary": {
