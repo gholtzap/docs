@@ -15,10 +15,20 @@ The `MonthCal` component provides a **monthly calendar view** that displays even
 - **Description:** An array of events that follow the <Link href="/types/Event">Event</Link> type. The component uses each event's start date to place it correctly within the monthly grid.
 - **Note:** Ensure that each event's date is provided in a format compatible with `date-fns` (e.g., ISO string) for proper parsing.
 
-## Usage Example
 
-Below is an example of how to use the `MonthCal` component:
+### `size?: CustomSize` (optional)
 
+- **Type:** `CustomSize` (`{ width?: string; height?: string; }`)
+- **Description:** An optional object to specify custom dimensions for the calendar component.
+    - `width`: Sets the overall width (e.g., `'80vw'`, `'600px'`, `'100%'`).
+    - `height`: Sets a fixed overall height (e.g., `'70vh'`, `'500px'`). 
+       - If a `height` is provided, the main calendar grid area will become vertically scrollable if its content exceeds the available space. If omitted, the component height will adjust based on its content.
+
+## Usage Examples
+
+Below are examples of how to use the `MonthCal` component:
+
+Default
 ```jsx
 'use client'
 
@@ -35,3 +45,23 @@ const App = () => {
 };
 
 export default App;
+```
+
+Custom Size
+```jsx
+'use client'
+
+import React from 'react';
+import { MonthCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => {
+  return (
+    <>
+      <MonthCal size={{ width: '700px', height: '500px' }} events={events ?? []} />
+    </>
+  );
+};
+
+export default App;
+```

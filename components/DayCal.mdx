@@ -17,14 +17,44 @@ The `DayCal` component provides a daily calendar view that displays events in tw
 - **Event Object Requirements:**
   - View the <Link href="/types/Event">Event</Link> page for more details.
 
-### `initialDate?: Date`
+### `initialDate?: Date` (optional)
 
-- **Type:** `Date` (optional)
+- **Type:** `Date`
 - **Description:** The starting date for the calendar view. Defaults to today's date if not provided.
 
-## Usage Example
+### `size?: CustomSize` (optional)
 
-Below is an example of how to use the `DayCal` component.
+- **Type:** `CustomSize`
+- **Description:** An object allowing customization of the calendar container's dimensions.
+- ``CustomSize`` Object structure:
+  - ``width?: string``: A CSS string defining the container's width (e.g., '100%', '800px').
+  - ``height?: string``: A CSS string defining the container's height (e.g., '600px', '80vh'). 
+     - If a height is provided, the calendar's time grid area will scroll vertically within this height. If omitted, the component defaults to a fixed height (around 800px for the scrollable area, plus headers).
+
+## Usage Examples
+
+Below are examples of how to use the `DayCal` component:
+
+
+Default
+```jsx
+'use client'
+
+import React from 'react';
+import { DayCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => (
+  <>
+    <DayCal events={events ?? []} />
+  </>
+);
+
+export default App;
+
+```
+
+Custom Date
 
 ```jsx
 'use client'
@@ -35,9 +65,31 @@ import { events } from '@/app/temp/sampledata';
 
 const App = () => (
   <>
-    <DayCal
-      events={events ?? []} />
+    <DayCal initialDate = {new Date(2024, 5, 20)} events={events ?? []}/>
   </>
 );
 
 export default App;
+```
+
+Custom Size 
+```jsx
+'use client'
+
+import React from 'react';
+import { DayCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => (
+  <>
+    <DayCal events={events ?? []} size={{ width: '700px', height: '500px' }} />
+  </>
+);
+
+export default App;
+
+```
+
+
+
+

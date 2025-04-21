@@ -9,15 +9,29 @@ The `YearCal` component provides a **yearly calendar view** that offers an overv
 
 ## Props
 
-### `initialDate?: Date`
+### `initialDate?: Date` (optional)
 
-- **Type:** `Date` (optional)
+- **Type:** `Date`
 - **Description:** The starting date for the calendar. If not provided, it defaults to the current date.
 
-## Usage Example
+### `size?: CustomSize` (optional)
 
-Below is an example of how to use the `YearCal` component:
+- **Type:** `CustomSize` (which is `{ width?: string; height?: string; }`) 
+- **Description:** An object to specify custom dimensions for the calendar container. Accepts optional `width` and `height` properties as CSS strings (e.g., '500px', '80%', '60vh').
+  - If the `size` object is provided:
+    - The container will have padding (`p-2`) and overflow scrolling (`overflow-auto`).
+    - If `width` is specified, it's applied as an inline style. If omitted, the container gets `w-full` .
+    - If `height` is specified, it's applied as an inline style. If omitted, the container gets `h-full` or `h-auto` depending on context (Tailwind classes).
+  - If the `size` prop itself is *not* provided:
+    - The component defaults to taking up the full viewport width and height (`width: '100vw'`, `height: '100vh'`) with padding (`p-2`) and overflow scrolling (`overflow-auto`).
 
+
+## Usage Examples
+
+Below are examples of how to use the `YearCal` component:
+
+
+Default
 ```jsx
 'use client'
 
@@ -33,3 +47,22 @@ const App = () => {
 };
 
 export default App;
+```
+
+Custom Size
+```jsx
+'use client'
+
+import React from 'react';
+import { YearCal } from 'solisa-calendar';
+
+const App = () => {
+  return (
+    <>
+      <YearCal size={{ width: '800px', height: '800px' }} />
+    </>
+  );
+};
+
+export default App;
+```

@@ -16,10 +16,21 @@ The `WeekCal` component provides a **weekly calendar view** that organizes event
 - **Event Object Requirements:**
   - Refer to the <Link href="/types/Event">Event</Link> page for more details on the event object structure.
 
-## Usage Example
+### `size?: CustomSize` (optional)
 
-Below is an example of how to use the `WeekCal` component:
+-   **Type:** `object`
+-   **Shape:** `{ width?: string; height?: string; }`
+-   **Description:** An optional object to control the calendar's dimensions.
+    -   `width`: Sets the overall width of the calendar container (e.g., `'100%'`, `'800px'`).
+    -   `height`: Sets the overall height of the calendar container (e.g., `'600px'`, `'80vh'`). 
+        - If a `height` is provided, the main calendar grid area becomes vertically scrollable within this height. If omitted, the grid defaults to a fixed height (currently `800px`).
 
+
+## Usage Examples
+
+Below are examples of how to use the `WeekCal` component:
+
+Default
 ```jsx
 'use client'
 
@@ -36,3 +47,27 @@ const App = () => {
 };
 
 export default App;
+
+```
+
+Custom Size
+```jsx
+'use client'
+
+import React from 'react';
+import { WeekCal } from 'solisa-calendar';
+import { events } from '@/app/temp/sampledata';
+
+const App = () => {
+  return (
+    <>
+      <WeekCal size={{ width: '900px', height: '900px' }} events={events ?? []} />
+    </>
+  );
+};
+
+export default App;
+
+```
+
+w
